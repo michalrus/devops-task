@@ -12,13 +12,13 @@ $ cd michalrus/
 … and then either test all provided input files with:
 
 ```
-sbt test
+$ sbt test
 ```
 
 … or give an input file of your liking to:
 
 ```
-sbt 'run ../data.txt'
+$ sbt 'run ../data.txt'
 ```
 
 # Subtasks
@@ -48,7 +48,8 @@ sbt 'run ../data.txt'
 * [ ] perhaps QuickCheck for some random decks — fuzzing 🤠
 
 * [x] in `main()`, read from a provided file, and output to `stdout`, as per:
-        > For each given line, print 0 if there is a tie (both players have no cards in their hands), 1 if p1 wins, 2 if p2 wins.
+
+  > For each given line, print 0 if there is a tie (both players have no cards in their hands), 1 if p1 wins, 2 if p2 wins.
 
 # Resources
 
