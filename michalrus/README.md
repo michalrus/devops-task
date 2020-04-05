@@ -1,20 +1,22 @@
 # Subtasks
 
-* [ ] project skel
+* [x] project skel
 
-    * [ ] https://github.com/benetis/benetis.me/blob/master/build.sbt
+    * [x] https://github.com/benetis/benetis.me/blob/master/build.sbt
 
-    * [ ] wartremover
+    * [x] wartremover
 
-    * [ ] scalafmt
+    * [x] scalafmt
 
-* [ ] streaming read
-
-* [ ] algorithm
+    * [x] ScalaTest, ScalaCheck
 
 * [ ] tests using provided input and outputs
 
     * [ ] what happens to Git symlinks on Windows™? The repo has chmod +x on all files, so it was created on Windows™…
+
+* [ ] algorithm
+
+* [ ] streaming read for main()
 
 * [ ] perhaps QuickCheck for some random decks
 
