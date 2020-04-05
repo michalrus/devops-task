@@ -5,6 +5,7 @@ import org.parboiled2._
 
 import scala.util.Try
 
+// TODO: parboiled2 triggers the `Null` wart?
 @SuppressWarnings(Array("org.wartremover.warts.All"))
 class GameParser(val input: ParserInput) extends Parser {
 

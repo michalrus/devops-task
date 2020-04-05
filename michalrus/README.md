@@ -9,16 +9,16 @@ $ git checkout michalrus
 $ cd michalrus/
 ```
 
-… and then either test provided input files with:
+… and then either test all provided input files with:
 
 ```
 sbt test
 ```
 
-… or give an `stdin` of your liking to:
+… or give an input file of your liking to:
 
 ```
-sbt run
+sbt 'run ../data.txt'
 ```
 
 # Subtasks
@@ -45,9 +45,9 @@ sbt run
 
   * It isn't said in the instruction to defend against non-trump table cards first, but let's assume that, based on provided examples…
 
-* [ ] perhaps QuickCheck for some random decks
+* [ ] perhaps QuickCheck for some random decks — fuzzing 🤠
 
-* [ ] in `main()`, read from `stdin`, and output to `stdout`, as per:
+* [x] in `main()`, read from a provided file, and output to `stdout`, as per:
         > For each given line, print 0 if there is a tie (both players have no cards in their hands), 1 if p1 wins, 2 if p2 wins.
 
 # Resources
