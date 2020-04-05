@@ -10,13 +10,13 @@
 
     * [x] ScalaTest, ScalaCheck
 
+* [ ] streaming parsing of input files
+
 * [ ] tests using provided input and outputs
 
     * [ ] what happens to Git symlinks on Windows™? The repo has chmod +x on all files, so it was created on Windows™…
 
 * [ ] algorithm
-
-* [ ] streaming read for main()
 
 * [ ] perhaps QuickCheck for some random decks
 
@@ -40,4 +40,6 @@
 
 4. Use that NN for input data, and output true values w.r.t. full legal rules.
 
-5. …?
+5. Add more players, teams etc.
+
+6. …?
