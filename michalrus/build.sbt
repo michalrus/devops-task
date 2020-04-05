@@ -8,11 +8,14 @@ lazy val root = (project in file("."))
     name := "michalrus",
     scalafmtOnCompile := true,
     wartremoverErrors in (Compile, compile) ++= Warts.unsafe,
-    libraryDependencies += "org.scalactic"     %% "scalactic"       % "3.1.1" % Test,
-    libraryDependencies += "org.scalatest"     %% "scalatest"       % "3.1.1" % Test,
-    libraryDependencies += "org.scalatestplus" %% "scalacheck-1-14" % "3.1.0.0" % Test,
-    libraryDependencies += "org.parboiled"     %% "parboiled"       % "2.2.0",
-    libraryDependencies += "com.beachape"      %% "enumeratum"      % "1.5.15",
+    libraryDependencies ++= Seq(
+      "org.scalactic"     %% "scalactic"       % "3.1.1" % Test,
+      "org.scalatest"     %% "scalatest"       % "3.1.1" % Test,
+      "org.scalatestplus" %% "scalacheck-1-14" % "3.1.0.0" % Test,
+      "org.parboiled"     %% "parboiled"       % "2.2.0",
+      "com.beachape"      %% "enumeratum"      % "1.5.15",
+      "com.lihaoyi"       %% "os-lib"          % "0.6.2"
+    ),
     // Recommended flags from <https://nathankleyn.com/2019/05/13/recommended-scalac-flags-for-2-13/>:
     scalacOptions ++= Seq(
       "-deprecation",                  // Emit warning and location for usages of deprecated APIs.

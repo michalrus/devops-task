@@ -14,12 +14,12 @@ class MainSpec extends AnyFlatSpec with Matchers with Checkers {
   "String concat" should "work" in check((a: String, b: String) => a.size <= (a + b).size)
 
   "Trump lines" should "parse" in {
-    new DealParser("H").TrumpLine.run() should be(Success(Suit.Hearts))
+    new GameParser("H").TrumpLine.run() should be(Success(Suit.Hearts))
   }
 
   "Deal lines" should "parse" in {
     import Suit._, Rank._
-    new DealParser("ST D2 CJ HQ DA | H2 D3 C4 S5 H6 D7 C8 S9").DealLine.run() should be(
+    new GameParser("ST D2 CJ HQ DA | H2 D3 C4 S5 H6 D7 C8 S9").DealLine.run() should be(
       Success(
         (
           Set(
@@ -43,5 +43,16 @@ class MainSpec extends AnyFlatSpec with Matchers with Checkers {
       )
     )
   }
+
+  def checkFile(dataName: os.PathChunk, resultName: os.PathChunk) = {
+    ("Example data ‘" + dataName.toString + "’") should ("return results from ‘" + resultName.toString + "’") in {
+      val games = GameParser.parseFile(os.pwd / os.up / dataName).get
+      info(games.toList.toString)
+    }
+  }
+
+  checkFile("example-data1.txt", "example-result1.txt")
+  // checkFile("example-data2.txt", "example-result2.txt")
+  // checkFile("data.txt", "result.txt")
 
 }

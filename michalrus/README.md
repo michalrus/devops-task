@@ -10,11 +10,13 @@
 
     * [x] ScalaTest, ScalaCheck
 
-* [ ] streaming parsing of input files
+* [x] streaming parsing of input files
 
 * [ ] tests using provided input and outputs
 
-    * [ ] what happens to Git symlinks on Windows™? The repo has chmod +x on all files, so it was created on Windows™…
+    * [x] what happens to Git symlinks on Windows™? The repo has chmod +x on all files, so it was created on Windows™…
+
+        * [x] [they cannot be used reliably](https://www.google.com/search?hl=en&q=git+symlinks+windows), so I’ll use `pwd` and point to `../` for now
 
 * [ ] algorithm
 

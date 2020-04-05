@@ -1,9 +1,12 @@
 package com.michalrus.durak
 
+import geny.Generator
 import org.parboiled2._
 
+import scala.util.Try
+
 @SuppressWarnings(Array("org.wartremover.warts.All"))
-class DealParser(val input: ParserInput) extends Parser {
+class GameParser(val input: ParserInput) extends Parser {
 
   def TrumpLine: Rule1[Suit]                  = rule { WS0 ~ SuitR ~ WS0 ~ EOI }
   def DealLine: Rule1[(Set[Card], Set[Card])] = rule { DealR ~ EOI }
@@ -48,5 +51,22 @@ class DealParser(val input: ParserInput) extends Parser {
 
   def WS0: Rule0 = rule { quiet(zeroOrMore(anyOf(" \t"))) }
   def WS1: Rule0 = rule { quiet(oneOrMore(anyOf(" \t"))) }
+
+}
+
+object GameParser {
+
+  def parseFile(path: os.Path): Try[Generator[Try[Game]]] =
+    for {
+      stream    <- Try(os.read.lines.stream(path))
+      trumpLine <- Try(stream.head)
+      trump     <- new GameParser(trumpLine).TrumpLine.run()
+    } yield stream
+      .drop(1)
+      .map(line => {
+        new GameParser(line).DealLine
+          .run()
+          .map({ case (playerA, playerB) => Game(trump, playerA, playerB) })
+      })
 
 }
