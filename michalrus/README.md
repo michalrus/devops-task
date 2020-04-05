@@ -42,6 +42,6 @@
 
 4. Use that NN for input data, and output true values w.r.t. full legal rules.
 
-5. Add more players, teams etc.
+5. Add more players, teams, talon etc.
 
 6. …?
