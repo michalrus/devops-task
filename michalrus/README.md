@@ -1,3 +1,26 @@
+# Running
+
+To test the solution:
+
+```
+$ git clone <this-repo>
+$ cd devops-task/
+$ git checkout michalrus
+$ cd michalrus/
+```
+
+… and then either test provided input files with:
+
+```
+sbt test
+```
+
+… or give an `stdin` of your liking to:
+
+```
+sbt run
+```
+
 # Subtasks
 
 * [x] project skel
@@ -12,7 +35,7 @@
 
 * [x] streaming parsing of input files
 
-* [ ] tests using provided input and outputs
+* [x] tests using provided input and outputs
 
     * [x] what happens to Git symlinks on Windows™? The repo has chmod +x on all files, so it was created on Windows™…
 
@@ -21,6 +44,9 @@
 * [ ] algorithm
 
 * [ ] perhaps QuickCheck for some random decks
+
+* [ ] in `main()`, read from `stdin`, and output to `stdout`, as per:
+        > For each given line, print 0 if there is a tie (both players have no cards in their hands), 1 if p1 wins, 2 if p2 wins.
 
 # Resources
 

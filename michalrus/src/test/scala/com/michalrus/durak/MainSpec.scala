@@ -44,15 +44,16 @@ class MainSpec extends AnyFlatSpec with Matchers with Checkers {
     )
   }
 
-  def checkFile(dataName: os.Path, resultName: os.Path) = {
-    ("Example data ‘" + dataName.toString + "’") should ("return results from ‘" + resultName.toString + "’") in {
-      val games = GameParser.parseFile(dataName).get
-      info(games.toList.toString)
+  def checkFile(dataPath: os.Path, resultPath: os.Path) = {
+    ("Example data ‘" + dataPath.toString + "’") should ("return results from ‘" + resultPath.toString + "’") in {
+      val games = GameParser.parseFile(dataPath).get
+      val plays = games.map(game => Game.play(game.get))
+      plays.toList.mkString("") should be(os.read(resultPath).trim)
     }
   }
 
   checkFile(os.pwd / os.up / "example-data1.txt", os.pwd / "example-result1.txt")
   // checkFile(os.pwd / os.up / "example-data2.txt", os.pwd / "example-result2.txt")
-  // checkFile(os.pwd / os.up / "data.txt", os.pwd / os.up / "result.txt")
+  // checkFile(os.pwd / os.up / "data.txt", os.pwd / os.up / "results.txt")
 
 }
