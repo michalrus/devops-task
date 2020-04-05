@@ -16,7 +16,7 @@ object Suit extends Enum[Suit] {
 }
 
 sealed trait Rank extends EnumEntry with Ordered[Rank] {
-  def compare(that: Rank) = Rank.indexOf(this)
+  def compare(that: Rank) = Rank.indexOf(this) compare Rank.indexOf(that)
 }
 
 object Rank extends Enum[Rank] {
@@ -36,4 +36,6 @@ object Rank extends Enum[Rank] {
   case object Ace   extends Rank
 }
 
-final case class Card(rank: Rank, suit: Suit)
+final case class Card(rank: Rank, suit: Suit) extends Ordered[Card] {
+  def compare(that: Card): Int = (this.rank, this.suit) compare ((that.rank, that.suit))
+}

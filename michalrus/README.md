@@ -41,7 +41,9 @@ sbt run
 
         * [x] [they cannot be used reliably](https://www.google.com/search?hl=en&q=git+symlinks+windows), so I’ll use `pwd` and point to `../` for now
 
-* [ ] algorithm
+* [x] algorithm
+
+  * It isn't said in the instruction to defend against non-trump table cards first, but let's assume that, based on provided examples…
 
 * [ ] perhaps QuickCheck for some random decks
 
@@ -60,14 +62,16 @@ sbt run
 
 # Further research
 
-1. Allow & implement *all* legal Durak rules.
+1. Make more optimal decisions w.r.t. where to sort, convert to lists etc. in `Game.scala`.
 
-2. See if there’s an optimal algorithmic strategy.
+1. Allow & implement *all* legal (and real) Durak rules.
 
-3. If not, teach a neural net to play it (by playing against itself?).
+1. See if there’s an optimal algorithmic strategy.
 
-4. Use that NN for input data, and output true values w.r.t. full legal rules.
+1. If not, teach a neural net to play it (by playing against itself?).
 
-5. Add more players, teams, talon etc.
+1. Use that NN for input data, and output true values w.r.t. full legal rules.
 
-6. …?
+1. Add more players, teams, talon etc.
+
+1. …?
